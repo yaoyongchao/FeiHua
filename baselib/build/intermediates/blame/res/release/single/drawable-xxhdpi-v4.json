@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/home/andy/ws/as36/FeiHua/baselib/build/intermediates/res/merged/release/drawable-xxhdpi-v4/ic_arrows_right.png",
+        "source": "/home/andy/ws/as36/FeiHua/baselib/src/main/res/drawable-xxhdpi/ic_arrows_right.png"
+    },
+    {
+        "merged": "/home/andy/ws/as36/FeiHua/baselib/build/intermediates/res/merged/release/drawable-xxhdpi-v4/ic_guide3.png",
+        "source": "/home/andy/ws/as36/FeiHua/baselib/src/main/res/drawable-xxhdpi/ic_guide3.png"
+    },
+    {
+        "merged": "/home/andy/ws/as36/FeiHua/baselib/build/intermediates/res/merged/release/drawable-xxhdpi-v4/ic_guide1.png",
+        "source": "/home/andy/ws/as36/FeiHua/baselib/src/main/res/drawable-xxhdpi/ic_guide1.png"
+    },
+    {
+        "merged": "/home/andy/ws/as36/FeiHua/baselib/build/intermediates/res/merged/release/drawable-xxhdpi-v4/ic_arrow_back.png",
+        "source": "/home/andy/ws/as36/FeiHua/baselib/src/main/res/drawable-xxhdpi/ic_arrow_back.png"
+    },
+    {
+        "merged": "/home/andy/ws/as36/FeiHua/baselib/build/intermediates/res/merged/release/drawable-xxhdpi-v4/ic_guide2.png",
+        "source": "/home/andy/ws/as36/FeiHua/baselib/src/main/res/drawable-xxhdpi/ic_guide2.png"
+    },
+    {
+        "merged": "/home/andy/ws/as36/FeiHua/baselib/build/intermediates/res/merged/release/drawable-xxhdpi-v4/ic_avatar.png",
+        "source": "/home/andy/ws/as36/FeiHua/baselib/src/main/res/drawable-xxhdpi/ic_avatar.png"
+    }
+]

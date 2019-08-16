@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/home/andy/ws/as36/FeiHua/baselib/build/intermediates/res/merged/release/drawable/ckb_green_selector.xml",
+        "source": "/home/andy/ws/as36/FeiHua/baselib/src/main/res/drawable/ckb_green_selector.xml"
+    },
+    {
+        "merged": "/home/andy/ws/as36/FeiHua/baselib/build/intermediates/res/merged/release/drawable/tv_tab_selector.xml",
+        "source": "/home/andy/ws/as36/FeiHua/baselib/src/main/res/drawable/tv_tab_selector.xml"
+    },
+    {
+        "merged": "/home/andy/ws/as36/FeiHua/baselib/build/intermediates/res/merged/release/drawable/bg_tab_border_selecter.xml",
+        "source": "/home/andy/ws/as36/FeiHua/baselib/src/main/res/drawable/bg_tab_border_selecter.xml"
+    }
+]

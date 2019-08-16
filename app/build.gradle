@@ -1,0 +1,132 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+def appId = "com.fh.bdc"
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId appId
+        minSdkVersion 18
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        flavorDimensions "versionCode"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    //多包配置
+    signingConfigs {
+        release {
+            storeFile file(RELEASE_STOREFILE)
+            storePassword RELEASE_STORE_PASSWORD
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+        }
+
+        debug {
+            storeFile file(RELEASE_STOREFILE1)
+            storePassword RELEASE_STORE_PASSWORD1
+            keyAlias RELEASE_KEY_ALIAS1
+            keyPassword RELEASE_KEY_PASSWORD1
+        }
+    }
+
+    buildTypes {
+        release {
+            //打开混淆
+            minifyEnabled true
+            // true - 打开资源压缩
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            debuggable false
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+            debuggable true
+        }
+    }
+
+    productFlavors {
+        cprelease {
+            manifestPlaceholders = [str: "releaseStr", package_name: "com.ygfh.doctor"]
+            applicationId "com.ygfh.doctor"
+            resValue "string", "app_name", "大医课堂"
+            resValue "bool", "isrRank", 'true'
+            buildConfigField "Boolean", "isTest", 'false'
+            buildConfigField "String", "wxAppId", "\"wx1e2beec58a4090c0\""
+            buildConfigField "String", "HTTP_API", "\"http://testone.xxxx.com/\""
+            manifestPlaceholders = [ENVIRONMENT: "apprelease",
+                                    app_icon   : "@mipmap/ic_launcher"]
+        }
+
+        cptest {
+            manifestPlaceholders = [str: "devStr", package_name: appId]
+            applicationId appId
+            resValue "string", "app_name", "大医课堂测试"
+            resValue "bool", "isrRank", 'true'
+            buildConfigField "Boolean", "isTest", 'true'
+            buildConfigField "String", "wxAppId", "\"wx1e2beec58a4090c0\""
+            buildConfigField "String", "HTTP_API", "\"https://www.easy-mock.com/\""
+            manifestPlaceholders = [ENVIRONMENT: "appdebug",
+                                    app_icon   : "@mipmap/ic_launcher_debug"]
+        }
+
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            output ->
+                def outputFile = output.outputFile
+
+                if (outputFile != null && outputFile.name.contains('cprelease')) {
+                    def fileName = "dayi-v${variant.versionName}.apk"
+                    outputFileName = fileName
+                } else if (outputFile != null && outputFile.name.contains('cptest')) {
+                    def fileName = "dayi_debug-v${variant.versionName}.apk"
+                    outputFileName = fileName
+
+                }
+//            outputFileName = "${project.name}_${defaultConfig.versionName}_${variant.buildType.name}.apk"
+        }
+
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.core:core-ktx:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation project(path: ':baselib')
+}

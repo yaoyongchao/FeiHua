@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/andy/ws/as36/FeiHua/baselib/build/intermediates/res/merged/release/layout-sw600dp-v13/design_layout_snackbar.xml",
+        "source": "/home/andy/.gradle/caches/transforms-2/files-2.1/9072dac7722e08cbc90e7809fcb8009f/material-1.1.0-alpha09/res/layout-sw600dp-v13/design_layout_snackbar.xml"
+    },
+    {
+        "merged": "/home/andy/ws/as36/FeiHua/baselib/build/intermediates/res/merged/release/layout-sw600dp-v13/mtrl_layout_snackbar.xml",
+        "source": "/home/andy/.gradle/caches/transforms-2/files-2.1/9072dac7722e08cbc90e7809fcb8009f/material-1.1.0-alpha09/res/layout-sw600dp-v13/mtrl_layout_snackbar.xml"
+    }
+]
