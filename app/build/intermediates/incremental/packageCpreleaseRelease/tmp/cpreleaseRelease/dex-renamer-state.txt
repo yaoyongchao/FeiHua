@@ -1,4 +1,0 @@
-#Thu Aug 15 17:43:50 CST 2019
-base.0=/home/andy/ws/as36/FeiHua/app/build/intermediates/transforms/r8/cprelease/release/0/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex

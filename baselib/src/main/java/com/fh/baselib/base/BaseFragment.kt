@@ -9,10 +9,11 @@ import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import com.fh.baselib.R
 import com.fh.baselib.utils.ToastUtil
+import com.fh.baselib.widget.LoadingDialog
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.scwang.smartrefresh.layout.api.RefreshLayout
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener
-import com.yyc.netlib.widget.LoadingFragment
+import com.trello.rxlifecycle3.components.support.RxFragment
 import kotlinx.android.synthetic.main.fragment_base.view.*
 
 /**
@@ -20,7 +21,7 @@ import kotlinx.android.synthetic.main.fragment_base.view.*
  * Date: 19-3-28
  * Description: Fragment基类
  */
-abstract class BaseFragment : Fragment(),View.OnClickListener , OnRefreshLoadMoreListener {
+abstract class BaseFragment : RxFragment(),View.OnClickListener , OnRefreshLoadMoreListener {
     private val BASE_VIEW_ID: Int = R.layout.fragment_base
     lateinit var mContext: Context
     lateinit var rootView: View
@@ -30,13 +31,13 @@ abstract class BaseFragment : Fragment(),View.OnClickListener , OnRefreshLoadMor
     private var isPrepared: Boolean = false
     //是否第一次加载完
     private var isFirstLoad = true
-    lateinit var loadingFragment : LoadingFragment
+    lateinit var loadingDialog : LoadingDialog
     lateinit var smartRefreshLayout:SmartRefreshLayout
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 //        rootView = inflater.inflate(initRootView(), container, false) as ViewGroup
         rootView = initRootView()
         this.mContext = rootView.context
-        loadingFragment = LoadingFragment()
+        loadingDialog = LoadingDialog(mContext)
 
         initView()
         initListener()
@@ -183,18 +184,17 @@ abstract class BaseFragment : Fragment(),View.OnClickListener , OnRefreshLoadMor
     /**
      * 显示进度条
      */
-    open fun showLoading() {
-        if (loadingFragment != null && loadingFragment.dialog != null && !loadingFragment.dialog!!.isShowing)
-            loadingFragment.show(childFragmentManager,"loading")
+    open fun showDialog() {
+        if (loadingDialog != null && !loadingDialog?.isShowing!!)
+            loadingDialog?.show()
     }
 
     /**
      * 取消进度条显示
      */
     open fun dismissDialog() {
-        if (loadingFragment != null && loadingFragment.dialog != null && !loadingFragment.dialog!!.isShowing) {
-            loadingFragment.dismiss()
-        }
+        if (loadingDialog?.isShowing!!)
+            loadingDialog?.dismiss()
     }
 
     /**

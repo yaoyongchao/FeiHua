@@ -30,15 +30,17 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-
+        <activity android:name="com.fh.bdc.ui.login.LoginActivity" />
         <!-- <activity android:name=".MainActivity"></activity> -->
-        <activity android:name="com.fh.bdc.demo.TwoActivity" >
+        <activity android:name="com.fh.bdc.ui.login.StartupActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.fh.bdc.ui.login.GuidePageActivity" />
+        <activity android:name="com.fh.bdc.demo.TwoActivity" />
     </application>
 
 </manifest>

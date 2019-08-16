@@ -203,11 +203,14 @@ dimen txt_small
 dimen txt_smaller
 dimen txt_smallest
 dimen txt_title
+drawable bg_fillet8_selector
 drawable bg_tab_border_selecter
+drawable btn_guide_selector
 drawable ckb_green_normal
 drawable ckb_green_press_false
 drawable ckb_green_press_true
 drawable ckb_green_selector
+drawable guide_dot_selector
 drawable ic_arrow_back
 drawable ic_arrows_right
 drawable ic_avatar
@@ -215,6 +218,9 @@ drawable ic_delete
 drawable ic_guide1
 drawable ic_guide2
 drawable ic_guide3
+drawable ic_loading
+drawable loading
+drawable my_progressbar
 drawable tv_tab_selector
 id base_id
 id img_tab
@@ -224,10 +230,12 @@ id llyt_refresh
 id refreshLayout
 id root_bar
 id toolbar
+id tv_loading
 id tv_tab
 id tv_title
 layout activity_base
 layout custom_toolbar_layout
+layout dialog_loading
 layout fragment_base
 layout fragment_loading
 layout tab_custom

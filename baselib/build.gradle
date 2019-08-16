@@ -32,7 +32,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha09'
     implementation 'androidx.core:core-ktx:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
@@ -61,5 +61,16 @@ dependencies {
     api "com.squareup.retrofit2:converter-gson:2.5.0"
     //https://github.com/XiaoQiWen/RxBus2
     api 'lib.gorden.rxbus2:rxbus:2.0.1'
+
+    //    图片轮播， 来自：https://github.com/bingoogolapple/BGABanner-Android
+    api 'cn.bingoogolapple:bga-banner:2.2.4'
+
+    //RxLifecycle
+    api 'com.trello.rxlifecycle3:rxlifecycle:3.0.0'
+    api 'com.trello.rxlifecycle3:rxlifecycle-components:3.0.0'
+//    api 'com.trello.rxlifecycle3:rxlifecycle-kotlin:3.0.0'
+    api 'com.trello.rxlifecycle3:rxlifecycle-android-lifecycle-kotlin:3.0.0'
+
+
 
 }

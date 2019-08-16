@@ -44,7 +44,7 @@
 23        android:allowBackup="true"
 23-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:7:9-35
 24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-24-->[androidx.core:core:1.1.0-rc02] /home/andy/.gradle/caches/transforms-2/files-2.1/4955281494a1c5f372bc6d1c6deb7b52/core-1.1.0-rc02/AndroidManifest.xml:24:18-86
+24-->[androidx.core:core:1.1.0-rc02] /home/andy/.gradle/caches/transforms-2/files-2.1/a577f0ec72a23816540ae3744ef6065e/core-1.1.0-rc02/AndroidManifest.xml:24:18-86
 25        android:debuggable="true"
 26        android:icon="@mipmap/ic_launcher_debug"
 26-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:8:9-35
@@ -57,22 +57,30 @@
 30        android:testOnly="true"
 31        android:theme="@style/AppTheme" >
 31-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:12:9-40
-32
+32        <activity android:name="com.fh.bdc.ui.login.LoginActivity" />
+32-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:13:9-69
+32-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:13:19-57
 33        <!-- <activity android:name=".MainActivity"></activity> -->
-34        <activity android:name="com.fh.bdc.demo.TwoActivity" >
-34-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:14:9-20:20
-34-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:14:19-51
+34        <activity android:name="com.fh.bdc.ui.login.StartupActivity" >
+34-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:15:9-21:20
+34-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:15:19-59
 35            <intent-filter>
-35-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:15:13-19:29
+35-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:16:13-20:29
 36                <action android:name="android.intent.action.MAIN" />
-36-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:16:17-69
-36-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:16:25-66
+36-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:17:17-69
+36-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:17:25-66
 37
 38                <category android:name="android.intent.category.LAUNCHER" />
-38-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:18:17-77
-38-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:18:27-74
+38-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:19:17-77
+38-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:19:27-74
 39            </intent-filter>
 40        </activity>
-41    </application>
-42
-43</manifest>
+41        <activity android:name="com.fh.bdc.ui.login.GuidePageActivity" />
+41-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:22:9-64
+41-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:22:19-61
+42        <activity android:name="com.fh.bdc.demo.TwoActivity" />
+42-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:23:9-54
+42-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:23:19-51
+43    </application>
+44
+45</manifest>

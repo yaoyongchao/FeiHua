@@ -2,9 +2,7 @@ package com.fh.baselib.http
 
 
 import android.util.Log
-import com.fh.baselib.BaseApplication
 import com.fh.baselib.http.entity.BaseEntity
-import com.fh.baselib.utils.NetWorkUtils
 import com.fh.baselib.utils.ToastUtil
 import io.reactivex.Observer
 import io.reactivex.annotations.NonNull
@@ -23,11 +21,7 @@ abstract class BaseObserver<T> : Observer<BaseEntity<T>> {
 
     override fun onSubscribe(@NonNull d: Disposable) {
         logd("onSubscribe")
-        if (!NetWorkUtils.Companion.isConnectedByState(BaseApplication.appContext)) {
-            ToastUtil.show("网络异常请检查网络")
-            onFail("网络异常请检查网络")
-            d.dispose()
-        }
+
     }
 
     override fun onNext(@NonNull tBaseEntity: BaseEntity<T>) {
@@ -43,18 +37,17 @@ abstract class BaseObserver<T> : Observer<BaseEntity<T>> {
 
     override fun onError(@NonNull e: Throwable) {
         loge("TAG--onError--" + e.toString())
-        if (!NetWorkUtils.Companion.isConnectedByState(BaseApplication.appContext)) {
-//            ToastUtil.show("网络异常请检查网络")
-            onFail("网络异常请检查网络")
-        } else {
-            onFail(e.toString())
-        }
+//        if (!NetWorkUtils.Companion.isConnectedByState(BaseApplication.appContext)) {
+////            ToastUtil.show("网络异常请检查网络")
+//            onFail("网络异常请检查网络")
+//        } else {
+//        }
+        onFail(e.toString())
 //        ExceptionHandle.handleException(e)
     }
 
     override fun onComplete() {
         logd("TAG--onComplete")
-
     }
 
     abstract fun onSuccess(t: T?)
@@ -62,11 +55,6 @@ abstract class BaseObserver<T> : Observer<BaseEntity<T>> {
     open fun onFail(msg: String) {
         ToastUtil.show(msg)
     }
-
-    /**
-     * 此次事件结束 ，走完onComplete方法和 error方法， 走该方法， 原因是走onErroe方法就不走onComplete方法了。
-     */
-    open fun onFinish() {}
 
     fun logd(str: String) {
         Log.d(TAG,str)

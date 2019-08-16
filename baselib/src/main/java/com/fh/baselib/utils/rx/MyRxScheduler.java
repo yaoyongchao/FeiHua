@@ -1,8 +1,17 @@
 package com.fh.baselib.utils.rx;
 
 
+import android.content.Context;
+
+import com.fh.baselib.BaseApplication;
+import com.fh.baselib.utils.LogUtil;
+import com.fh.baselib.utils.NetWorkUtils;
+import com.fh.baselib.utils.ToastUtil;
+import com.fh.baselib.widget.LoadingDialog;
+
 import io.reactivex.ObservableTransformer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Action;
 import io.reactivex.schedulers.Schedulers;
 
 ;
@@ -57,6 +66,31 @@ public class MyRxScheduler {
 //
 //                    }
 //                })
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    public static <T> ObservableTransformer<T,T> ioMain(Context context) {
+        final LoadingDialog loadingDialog = new LoadingDialog(context);
+        return observable -> observable.subscribeOn(Schedulers.io())
+                .doOnSubscribe(disposable -> {
+                    if (!NetWorkUtils.Companion.isConnectedByState(BaseApplication.appContext)) {
+                        disposable.dispose();
+                        LogUtil.Companion.d("doOnSubscribe -- There's no network link.");
+                        ToastUtil.Companion.show("网络异常请检查网络");
+                    } else {
+                        LogUtil.Companion.d("doOnSubscribe -- There's a network link.");
+                        if (!loadingDialog.isShowing())
+                            loadingDialog.show();
+                    }
+                })
+                .doFinally(new Action() {
+                    @Override
+                    public void run() throws Exception {
+                        if (loadingDialog != null && loadingDialog.isShowing())
+                            loadingDialog.dismiss();
+
+                    }
+                })
                 .observeOn(AndroidSchedulers.mainThread());
     }
 

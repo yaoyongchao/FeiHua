@@ -1,16 +1,15 @@
 package com.fh.bdc.demo
 
-import com.fh.baselib.base.BaseActivity
-import com.fh.baselib.http.BaseObserver
+import com.fh.baselib.mvp.MvpBaseActivity
 import com.fh.baselib.utils.LogUtil
-import com.fh.baselib.utils.rx.MyRxScheduler
 import com.fh.bdc.BuildConfig
 import com.fh.bdc.R
-import com.fh.bdc.bean.Login
-import com.ygfh.doctor.net.DcServiceFactory
+import com.ygfh.doctor.ui.demo.TwoContract
+import com.ygfh.doctor.ui.demo.TwoPresenter
 import kotlinx.android.synthetic.main.activity_two.*
 
-class TwoActivity : BaseActivity() {
+class TwoActivity : MvpBaseActivity<TwoContract.TwoView,TwoPresenter>(),TwoContract.TwoView {
+
 
     override fun layoutId(): Int {
         return R.layout.activity_two
@@ -27,16 +26,30 @@ class TwoActivity : BaseActivity() {
     override fun initListener() {
         LogUtil.i("init")
         btn1.setOnClickListener {
-            DcServiceFactory.getService().login2()
-//                .delay(5, TimeUnit.SECONDS)
+
+            mPresenter?.login()
+
+//            showDialog()
+//            loadingFragment.show(supportFragmentManager,"loading")
+            /*DcServiceFactory.getService().login2()
+                .delay(5, TimeUnit.SECONDS)
                 .compose(MyRxScheduler.ioMain())
                 .subscribe(object : BaseObserver<Login>(){
                     override fun onSuccess(t: Login?) {
                         LogUtil.e("login:" + t!! + "-- " )
                     }
 
-                })
+                    override fun onFinish() {
+                        super.onFinish()
+                        dismissDialog()
+                    }
+
+
+                })*/
         }
     }
 
+    override fun loginSuccess() {
+
+    }
 }

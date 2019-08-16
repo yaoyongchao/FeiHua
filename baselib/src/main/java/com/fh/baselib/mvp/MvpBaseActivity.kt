@@ -12,7 +12,9 @@ abstract class MvpBaseActivity<V: BaseView,P : BasePresenter<V> >: BaseActivity(
         mPresenter = CreatUtil.getT(this,1)
         super.onCreate(savedInstanceState)
 //        L.e( "mPresenter: $mPresenter")
-        mPresenter?.bindView(this as V)
+        mPresenter?.attachView(this as V)
+        mPresenter?.bindContext(mContext)
+        mPresenter?.bindToLife(this.bindToLifecycle())
 
     }
 
@@ -24,7 +26,11 @@ abstract class MvpBaseActivity<V: BaseView,P : BasePresenter<V> >: BaseActivity(
     }
 
     override fun onDestroy() {
+        mPresenter?.detachView()
+        mPresenter?.unBindToLife()
+        mPresenter?.unBindContext()
+        mPresenter = null
         super.onDestroy()
-        mPresenter?.unBindView()
+
     }
 }

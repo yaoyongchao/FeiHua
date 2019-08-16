@@ -12,7 +12,9 @@ abstract class MvpBaseFragment<V: BaseView,P : BasePresenter<V> >: BaseFragment(
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         mPresenter = CreatUtil.getT(this,1)
-        mPresenter?.bindView(this as V)
+        mPresenter?.attachView(this as V)
+        mPresenter?.bindContext(mContext)
+        mPresenter?.bindToLife(this.bindToLifecycle())
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
@@ -36,9 +38,10 @@ abstract class MvpBaseFragment<V: BaseView,P : BasePresenter<V> >: BaseFragment(
 
     override fun initData() {
     }
-
     override fun onDestroy() {
-        mPresenter?.unBindView()
+        mPresenter?.detachView()
+        mPresenter?.unBindToLife()
+        mPresenter?.unBindContext()
         mPresenter=null
         super.onDestroy()
     }

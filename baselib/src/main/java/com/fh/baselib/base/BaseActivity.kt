@@ -1,18 +1,17 @@
 package com.fh.baselib.base
 
-import android.app.ActivityManager
 import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.widget.LinearLayout
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.fh.baselib.R
 import com.fh.baselib.utils.ActivityManagers
 import com.fh.baselib.utils.ActivityUtil
 import com.fh.baselib.utils.ToastUtil
 import com.fh.baselib.widget.CustomToolBar
-import com.yyc.netlib.widget.LoadingFragment
+import com.fh.baselib.widget.LoadingDialog
+import com.trello.rxlifecycle3.components.support.RxAppCompatActivity
 import gorden.rxbus2.RxBus
 
 /**
@@ -20,11 +19,11 @@ import gorden.rxbus2.RxBus
  * Date: 19-3-28
  * Description: Activity基类
  */
-abstract class BaseActivity : AppCompatActivity() , CustomToolBar.OnClickLeftListener, CustomToolBar.OnClickRightListener,View.OnClickListener {
+abstract class BaseActivity : RxAppCompatActivity() , CustomToolBar.OnClickLeftListener, CustomToolBar.OnClickRightListener,View.OnClickListener {
     private val BASE_VIEW_ID: Int = R.layout.activity_base
     lateinit var mContext: Context
     lateinit var customToolBar: CustomToolBar
-    lateinit var loadingFragment : LoadingFragment
+    lateinit var loadingDialog: LoadingDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         mContext = this
@@ -34,7 +33,7 @@ abstract class BaseActivity : AppCompatActivity() , CustomToolBar.OnClickLeftLis
         setContentView(initRootView())
         ActivityManagers.instance.addActivity(this)
         RxBus.get().register(this)
-        loadingFragment = LoadingFragment()
+        loadingDialog = LoadingDialog(mContext)
         initView()
         initListener()
         initData()
@@ -164,7 +163,8 @@ abstract class BaseActivity : AppCompatActivity() , CustomToolBar.OnClickLeftLis
     override fun onDestroy() {
         super.onDestroy()
 //        L.d("")
-        dismissDialog()
+        if (loadingDialog?.isShowing!!)
+            loadingDialog?.dismiss()
         RxBus.get().unRegister(this)
         ActivityManagers.instance.removeActivity(this)
 
@@ -173,20 +173,18 @@ abstract class BaseActivity : AppCompatActivity() , CustomToolBar.OnClickLeftLis
     /**
      * 显示进度条
      */
-    open fun showLoading() {
-        if (loadingFragment != null && loadingFragment.dialog != null && !loadingFragment.dialog!!.isShowing)
-            loadingFragment.show(supportFragmentManager,"loading")
+    open fun showDialog() {
+        if (loadingDialog != null && !loadingDialog?.isShowing!!)
+            loadingDialog?.show()
     }
 
     /**
      * 取消进度条显示
      */
     open fun dismissDialog() {
-        if (loadingFragment != null && loadingFragment.dialog != null && !loadingFragment.dialog!!.isShowing) {
-            loadingFragment.dismiss()
-        }
+        if (loadingDialog?.isShowing!!)
+            loadingDialog?.dismiss()
     }
-
     /**
      * 显示短时间吐司
      */

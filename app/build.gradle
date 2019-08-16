@@ -4,6 +4,14 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
 def appId = "com.fh.bdc"
 android {
     compileSdkVersion 28
@@ -16,12 +24,12 @@ android {
         flavorDimensions "versionCode"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
+//    buildTypes {
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//        }
+//    }
 
 
     //多包配置
@@ -61,6 +69,19 @@ android {
     }
 
     productFlavors {
+
+        cpdebug {
+            manifestPlaceholders = [str: "devStr", package_name: appId]
+            applicationId appId
+            resValue "string", "app_name", "大医课堂测试"
+            resValue "bool", "isrRank", 'true'
+            buildConfigField "Boolean", "isTest", 'true'
+            buildConfigField "String", "wxAppId", "\"wx1e2beec58a4090c0\""
+            buildConfigField "String", "HTTP_API", "\"https://www.easy-mock.com/\""
+            manifestPlaceholders = [ENVIRONMENT: "appdebug",
+                                    app_icon   : "@mipmap/ic_launcher_debug"]
+        }
+
         cprelease {
             manifestPlaceholders = [str: "releaseStr", package_name: "com.ygfh.doctor"]
             applicationId "com.ygfh.doctor"
@@ -73,17 +94,6 @@ android {
                                     app_icon   : "@mipmap/ic_launcher"]
         }
 
-        cptest {
-            manifestPlaceholders = [str: "devStr", package_name: appId]
-            applicationId appId
-            resValue "string", "app_name", "大医课堂测试"
-            resValue "bool", "isrRank", 'true'
-            buildConfigField "Boolean", "isTest", 'true'
-            buildConfigField "String", "wxAppId", "\"wx1e2beec58a4090c0\""
-            buildConfigField "String", "HTTP_API", "\"https://www.easy-mock.com/\""
-            manifestPlaceholders = [ENVIRONMENT: "appdebug",
-                                    app_icon   : "@mipmap/ic_launcher_debug"]
-        }
 
     }
 
@@ -95,8 +105,8 @@ android {
                 if (outputFile != null && outputFile.name.contains('cprelease')) {
                     def fileName = "dayi-v${variant.versionName}.apk"
                     outputFileName = fileName
-                } else if (outputFile != null && outputFile.name.contains('cptest')) {
-                    def fileName = "dayi_debug-v${variant.versionName}.apk"
+                } else if (outputFile != null && outputFile.name.contains('cpdebug')) {
+                    def fileName = "dayi_test-v${variant.versionName}.apk"
                     outputFileName = fileName
 
                 }
@@ -129,4 +139,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation project(path: ':baselib')
+
+    //ARouter
+    implementation 'com.alibaba:arouter-api:1.5.0'
+    kapt 'com.alibaba:arouter-compiler:1.2.2'
 }

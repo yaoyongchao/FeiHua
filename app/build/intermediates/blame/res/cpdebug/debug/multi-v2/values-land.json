@@ -4,17 +4,7 @@
             "outputFile": "/home/andy/ws/as36/FeiHua/app/build/intermediates/incremental/mergeCpdebugDebugResources/merged.dir/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "/home/andy/.gradle/caches/transforms-2/files-2.1/7e0370417d1488c3aedf7a2f8fa3ddd5/appcompat-1.1.0-rc01/res/values-land/values-land.xml",
-                    "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,125,196",
-                        "endColumns": "69,70,67",
-                        "endOffsets": "120,191,259"
-                    }
-                },
-                {
-                    "source": "/home/andy/.gradle/caches/transforms-2/files-2.1/9072dac7722e08cbc90e7809fcb8009f/material-1.1.0-alpha09/res/values-land/values-land.xml",
+                    "source": "/home/andy/.gradle/caches/transforms-2/files-2.1/b7954a5be024ad0ec40553df7ca204c7/material-1.1.0-alpha09/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -30,6 +20,16 @@
                         "endLines": "5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,25",
                         "endColumns": "72,69,71,69,64,66,69,71,68,81,89,75,67,66,77,64,66,10",
                         "endOffsets": "332,402,474,544,609,676,746,818,887,969,1059,1135,1203,1270,1348,1413,1480,1652"
+                    }
+                },
+                {
+                    "source": "/home/andy/.gradle/caches/transforms-2/files-2.1/68925a7c9d796a57c776646a65a7fa19/appcompat-1.1.0-rc01/res/values-land/values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,125,196",
+                        "endColumns": "69,70,67",
+                        "endOffsets": "120,191,259"
                     }
                 }
             ]

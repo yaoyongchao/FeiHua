@@ -17,6 +17,9 @@ class LogUtil {
         fun  initLogger() {
             initLogger(true)
         }
+        fun openLog(bool : Boolean) {
+            isDebug = bool
+        }
         fun initLogger(debug: Boolean) {
 //        Logger.addLogAdapter(AndroidLogAdapter())
             isDebug = debug
