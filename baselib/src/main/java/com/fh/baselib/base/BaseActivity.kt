@@ -50,12 +50,6 @@ abstract class BaseActivity : RxAppCompatActivity() , CustomToolBar.OnClickLeftL
         customToolBar.onClickRightListener = this
         baseView.addView(customToolBar)
 
-//        //添加网络链接状态
-//        var netView: LinearLayout = layoutInflater.inflate(R.layout.inclue_socket_status,null) as LinearLayout
-//        var paramsNet: LinearLayout.LayoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-//                /*LinearLayout.LayoutParams.WRAP_CONTENT*/ScreenUtils.dip2px(this,40f))
-//        netView.layoutParams = paramsNet
-//        baseView.addView(netView)
 
         if (layoutId() != 0) {
             var subView: View = getLayoutInflater().inflate(layoutId(), null)

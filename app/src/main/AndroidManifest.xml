@@ -21,6 +21,7 @@
         </activity>
         <activity android:name=".ui.login.GuidePageActivity" />
         <activity android:name=".demo.TwoActivity" />
+        <activity android:name=".ui.home.HomeActivity" />
     </application>
 
 </manifest>

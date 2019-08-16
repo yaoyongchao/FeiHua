@@ -1,10 +1,9 @@
 package com.fh.bdc.ui.login
 
-import android.content.Intent
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.fh.baselib.base.BaseActivity
 import com.fh.bdc.R
-import com.fh.bdc.demo.TwoActivity
+import com.fh.bdc.utils.JumpUtil
 import com.fh.bdc.utils.RouteUrl
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -28,7 +27,8 @@ class LoginActivity : BaseActivity() {
 
     override fun initListener() {
         btn_login.setOnClickListener {
-            startActivity(Intent(mContext,TwoActivity::class.java))
+//            startActivity(Intent(mContext,TwoActivity::class.java))
+            JumpUtil.jumpActivity(RouteUrl.home)
         }
     }
 }

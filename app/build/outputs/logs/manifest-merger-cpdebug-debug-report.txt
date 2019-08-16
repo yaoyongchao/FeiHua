@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 application
-INJECTED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:5:5-24:19
+INJECTED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:5:5-25:19
 MERGED from [com.google.android.material:material:1.1.0-alpha09] /home/andy/.gradle/caches/transforms-2/files-2.1/b7954a5be024ad0ec40553df7ca204c7/material-1.1.0-alpha09/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.1.0-alpha09] /home/andy/.gradle/caches/transforms-2/files-2.1/b7954a5be024ad0ec40553df7ca204c7/material-1.1.0-alpha09/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/andy/.gradle/caches/transforms-2/files-2.1/afb40fcc1e30bc560adc9ab1d73c94c8/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
@@ -29,10 +29,10 @@ MERGED from [com.scwang.smartrefresh:SmartRefreshLayout:1.1.0] /home/andy/.gradl
 	android:name
 		ADDED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:6:9-38
 manifest
-ADDED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:2:1-26:12
+ADDED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:2:1-27:12
 MERGED from [:baselib] /home/andy/ws/as36/FeiHua/baselib/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-21:12
 MERGED from [com.google.android.material:material:1.1.0-alpha09] /home/andy/.gradle/caches/transforms-2/files-2.1/b7954a5be024ad0ec40553df7ca204c7/material-1.1.0-alpha09/AndroidManifest.xml:17:1-24:12
 MERGED from [com.trello.rxlifecycle3:rxlifecycle-components:3.0.0] /home/andy/.gradle/caches/transforms-2/files-2.1/c658baff7951c1534879a6fedb270f42/rxlifecycle-components-3.0.0/AndroidManifest.xml:13:1-18:12
@@ -83,20 +83,20 @@ MERGED from [com.scwang.smartrefresh:SmartRefreshLayout:1.1.0] /home/andy/.gradl
 MERGED from [lib.gorden.rxbus2:rxbus:2.0.1] /home/andy/.gradle/caches/transforms-2/files-2.1/5ddb580995414ba30a1e894df961813b/rxbus-2.0.1/AndroidManifest.xml:2:1-12:12
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] /home/andy/.gradle/caches/transforms-2/files-2.1/de2a7cabb286c5486b650b178731273f/rxandroid-2.1.1/AndroidManifest.xml:15:1-20:12
 MERGED from [cn.bingoogolapple:bga-banner:2.2.4] /home/andy/.gradle/caches/transforms-2/files-2.1/f6a3fa51068f46ef05f977b0d5fd909b/jetified-bga-banner-2.2.4/AndroidManifest.xml:2:1-10:12
-INJECTED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:2:1-27:12
 	package
 		ADDED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:3:5-25
 		INJECTED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml
 		INJECTED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml
-		ADDED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:2:1-26:12
+		ADDED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:2:1-27:12
 		INJECTED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml
-		ADDED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:2:1-26:12
+		ADDED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:2:1-27:12
 		INJECTED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:2:11-69
@@ -240,6 +240,10 @@ activity#com.fh.bdc.demo.TwoActivity
 ADDED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:23:9-54
 	android:name
 		ADDED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:23:19-51
+activity#com.fh.bdc.ui.home.HomeActivity
+ADDED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:24:9-58
+	android:name
+		ADDED from /home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:24:19-55
 uses-permission#android.permission.INTERNET
 ADDED from [:baselib] /home/andy/ws/as36/FeiHua/baselib/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-67
 	android:name

@@ -1,1 +1,5 @@
-<resources></resources>
+<resources>
+    <string name="tab1">tab1</string>
+    <string name="tab2">tab2</string>
+    <string name="tab3">tab3</string>
+</resources>

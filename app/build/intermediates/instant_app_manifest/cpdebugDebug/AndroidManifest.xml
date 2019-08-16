@@ -41,6 +41,7 @@
         </activity>
         <activity android:name="com.fh.bdc.ui.login.GuidePageActivity" />
         <activity android:name="com.fh.bdc.demo.TwoActivity" />
+        <activity android:name="com.fh.bdc.ui.home.HomeActivity" />
     </application>
 
 </manifest>

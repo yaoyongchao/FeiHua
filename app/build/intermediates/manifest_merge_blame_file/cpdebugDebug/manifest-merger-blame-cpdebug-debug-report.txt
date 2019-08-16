@@ -81,6 +81,9 @@
 42        <activity android:name="com.fh.bdc.demo.TwoActivity" />
 42-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:23:9-54
 42-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:23:19-51
-43    </application>
-44
-45</manifest>
+43        <activity android:name="com.fh.bdc.ui.home.HomeActivity" />
+43-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:24:9-58
+43-->/home/andy/ws/as36/FeiHua/app/src/main/AndroidManifest.xml:24:19-55
+44    </application>
+45
+46</manifest>

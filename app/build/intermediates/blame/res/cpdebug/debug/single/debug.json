@@ -28,12 +28,12 @@
         "source": "/home/andy/.gradle/caches/transforms-2/files-2.1/a577f0ec72a23816540ae3744ef6065e/core-1.1.0-rc02/res/layout-v16/notification_template_custom_big.xml"
     },
     {
-        "merged": "/home/andy/ws/as36/FeiHua/app/build/intermediates/res/merged/cpdebug/debug/layout_design_layout_snackbar_include.xml.flat",
-        "source": "/home/andy/.gradle/caches/transforms-2/files-2.1/b7954a5be024ad0ec40553df7ca204c7/material-1.1.0-alpha09/res/layout/design_layout_snackbar_include.xml"
-    },
-    {
         "merged": "/home/andy/ws/as36/FeiHua/app/build/intermediates/res/merged/cpdebug/debug/layout_srl_classics_footer.xml.flat",
         "source": "/home/andy/.gradle/caches/transforms-2/files-2.1/84e19ac731f787fdf9f605f7d2922c7b/jetified-SmartRefreshLayout-1.1.0/res/layout/srl_classics_footer.xml"
+    },
+    {
+        "merged": "/home/andy/ws/as36/FeiHua/app/build/intermediates/res/merged/cpdebug/debug/layout_design_layout_snackbar_include.xml.flat",
+        "source": "/home/andy/.gradle/caches/transforms-2/files-2.1/b7954a5be024ad0ec40553df7ca204c7/material-1.1.0-alpha09/res/layout/design_layout_snackbar_include.xml"
     },
     {
         "merged": "/home/andy/ws/as36/FeiHua/app/build/intermediates/res/merged/cpdebug/debug/layout_mtrl_calendar_day_of_week.xml.flat",
@@ -144,6 +144,10 @@
         "source": "/home/andy/.gradle/caches/transforms-2/files-2.1/68925a7c9d796a57c776646a65a7fa19/appcompat-1.1.0-rc01/res/layout/abc_alert_dialog_title_material.xml"
     },
     {
+        "merged": "/home/andy/ws/as36/FeiHua/app/build/intermediates/res/merged/cpdebug/debug/mipmap-xhdpi_manage_order.png.flat",
+        "source": "/home/andy/ws/as36/FeiHua/app/src/main/res/mipmap-xhdpi/manage_order.png"
+    },
+    {
         "merged": "/home/andy/ws/as36/FeiHua/app/build/intermediates/res/merged/cpdebug/debug/drawable-xhdpi-v4_ic_loading.png.flat",
         "source": "/home/andy/ws/as36/FeiHua/baselib/build/intermediates/packaged_res/debug/drawable-xhdpi-v4/ic_loading.png"
     },
@@ -196,12 +200,20 @@
         "source": "/home/andy/.gradle/caches/transforms-2/files-2.1/b7954a5be024ad0ec40553df7ca204c7/material-1.1.0-alpha09/res/layout/design_text_input_start_icon.xml"
     },
     {
+        "merged": "/home/andy/ws/as36/FeiHua/app/build/intermediates/res/merged/cpdebug/debug/mipmap-xhdpi_manage_order_sel.png.flat",
+        "source": "/home/andy/ws/as36/FeiHua/app/src/main/res/mipmap-xhdpi/manage_order_sel.png"
+    },
+    {
         "merged": "/home/andy/ws/as36/FeiHua/app/build/intermediates/res/merged/cpdebug/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
         "source": "/home/andy/ws/as36/FeiHua/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
         "merged": "/home/andy/ws/as36/FeiHua/app/build/intermediates/res/merged/cpdebug/debug/layout_custom_dialog.xml.flat",
         "source": "/home/andy/.gradle/caches/transforms-2/files-2.1/a577f0ec72a23816540ae3744ef6065e/core-1.1.0-rc02/res/layout/custom_dialog.xml"
+    },
+    {
+        "merged": "/home/andy/ws/as36/FeiHua/app/build/intermediates/res/merged/cpdebug/debug/layout_activity_home.xml.flat",
+        "source": "/home/andy/ws/as36/FeiHua/app/src/main/res/layout/activity_home.xml"
     },
     {
         "merged": "/home/andy/ws/as36/FeiHua/app/build/intermediates/res/merged/cpdebug/debug/layout_design_layout_snackbar.xml.flat",
@@ -310,6 +322,10 @@
     {
         "merged": "/home/andy/ws/as36/FeiHua/app/build/intermediates/res/merged/cpdebug/debug/layout_abc_screen_content_include.xml.flat",
         "source": "/home/andy/.gradle/caches/transforms-2/files-2.1/68925a7c9d796a57c776646a65a7fa19/appcompat-1.1.0-rc01/res/layout/abc_screen_content_include.xml"
+    },
+    {
+        "merged": "/home/andy/ws/as36/FeiHua/app/build/intermediates/res/merged/cpdebug/debug/layout_fragment_tab1.xml.flat",
+        "source": "/home/andy/ws/as36/FeiHua/app/src/main/res/layout/fragment_tab1.xml"
     },
     {
         "merged": "/home/andy/ws/as36/FeiHua/app/build/intermediates/res/merged/cpdebug/debug/layout_abc_list_menu_item_radio.xml.flat",
@@ -618,6 +634,10 @@
     {
         "merged": "/home/andy/ws/as36/FeiHua/app/build/intermediates/res/merged/cpdebug/debug/layout_test_reflow_chipgroup.xml.flat",
         "source": "/home/andy/.gradle/caches/transforms-2/files-2.1/b7954a5be024ad0ec40553df7ca204c7/material-1.1.0-alpha09/res/layout/test_reflow_chipgroup.xml"
+    },
+    {
+        "merged": "/home/andy/ws/as36/FeiHua/app/build/intermediates/res/merged/cpdebug/debug/drawable_tab2_selector.xml.flat",
+        "source": "/home/andy/ws/as36/FeiHua/app/src/main/res/drawable/tab2_selector.xml"
     },
     {
         "merged": "/home/andy/ws/as36/FeiHua/app/build/intermediates/res/merged/cpdebug/debug/layout_design_layout_tab_text.xml.flat",
