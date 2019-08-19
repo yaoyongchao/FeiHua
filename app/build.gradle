@@ -20,7 +20,7 @@ android {
         minSdkVersion 18
         targetSdkVersion 28
         versionCode 1
-        versionName "1.0"
+        versionName "1.1.0"
         flavorDimensions "versionCode"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -89,7 +89,7 @@ android {
             resValue "bool", "isrRank", 'true'
             buildConfigField "Boolean", "isTest", 'false'
             buildConfigField "String", "wxAppId", "\"wx1e2beec58a4090c0\""
-            buildConfigField "String", "HTTP_API", "\"http://testone.xxxx.com/\""
+            buildConfigField "String", "HTTP_API", "\"https://www.easy-mock.com/\""
             manifestPlaceholders = [ENVIRONMENT: "apprelease",
                                     app_icon   : "@mipmap/ic_launcher"]
         }
@@ -143,4 +143,5 @@ dependencies {
     //ARouter
     implementation 'com.alibaba:arouter-api:1.5.0'
     kapt 'com.alibaba:arouter-compiler:1.2.2'
+    implementation project(path: ':upgradelib')
 }

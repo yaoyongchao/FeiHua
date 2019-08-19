@@ -7,7 +7,7 @@ package com.fh.baselib.http.entity
  */
 class BaseEntity<T> {
     var code: Int = -1
-    lateinit var msg: String
+    var msg: String ?= null
     var data: T? = null
 
     override fun toString(): String {

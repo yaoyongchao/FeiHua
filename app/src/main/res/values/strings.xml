@@ -2,4 +2,6 @@
     <string name="tab1">tab1</string>
     <string name="tab2">tab2</string>
     <string name="tab3">tab3</string>
+    <string name="app_upgrade">版本更新</string>
+    <string name="determine">确定</string>
 </resources>

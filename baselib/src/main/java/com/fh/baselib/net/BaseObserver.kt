@@ -31,7 +31,7 @@ abstract class BaseObserver<T> : Observer<BaseEntity<T>> {
             onSuccess(t)
         } else {
             loge("onNext--Failure--code:" + tBaseEntity.code + "--Message:" + tBaseEntity.msg)
-            onFail(tBaseEntity.msg)
+            onFail(tBaseEntity.msg!!)
         }
     }
 

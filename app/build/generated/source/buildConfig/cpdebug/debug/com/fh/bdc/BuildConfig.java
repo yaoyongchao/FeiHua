@@ -9,7 +9,7 @@ public final class BuildConfig {
   public static final String BUILD_TYPE = "debug";
   public static final String FLAVOR = "cpdebug";
   public static final int VERSION_CODE = 1;
-  public static final String VERSION_NAME = "1.0";
+  public static final String VERSION_NAME = "1.1.0";
   // Fields from product flavor: cpdebug
   public static final String HTTP_API = "https://www.easy-mock.com/";
   public static final Boolean isTest = true;

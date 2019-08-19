@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.weicai.upgradelib">
+
+<!--    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />-->
+    <!--安装跳安装界面-->
+    <uses-permission android:name="android.permission.INSTALL_PACKAGES"
+        tools:ignore="ProtectedPermissions" />
+    <!--兼容Android 8.0 安装跳安装界面-->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+
+    <application>
+        <!-- Android 7.0 照片、APK下载保存路径-->
+        <!--android:authorities="packgeName.fileProvider"-->
+        <!--android:authorities="com.vcaidian.customer.provider"-->
+        <!--android:name="android.support.v4.content.FileProvider"-->
+        <provider
+
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+        <activity android:name=".AndroidOPermissionActivity"></activity>
+    </application>
+
+</manifest>
