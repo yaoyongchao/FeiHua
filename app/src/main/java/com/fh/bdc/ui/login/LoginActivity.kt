@@ -3,6 +3,9 @@ package com.fh.bdc.ui.login
 import android.util.Log
 import android.view.View
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.apeng.permissions.EsayPermissions
+import com.apeng.permissions.OnPermission
+import com.apeng.permissions.Permission
 import com.fh.baselib.base.BaseActivity
 import com.fh.baselib.http.BaseObserver
 import com.fh.baselib.utils.AppUtil
@@ -22,7 +25,7 @@ import java.util.concurrent.TimeUnit
 
 /**
  * Author: YongChao
- * Date: 19-8-16 上午11:50
+ * Date: 19-8-16 上午11:50 问个问题， 你们Android运行时权限申请时，若是用户选中了， 不再询问，你们是咱们处理的？
  * Description: 登录
  */
 @Route(path = RouteUrl.login)
@@ -39,7 +42,7 @@ class LoginActivity : BaseActivity() {
 
     override fun onPause() {
         super.onPause()
-//        appDownloadManager?.onPause()
+        appDownloadManager?.onPause()
     }
 
     override fun initView() {
@@ -61,7 +64,54 @@ class LoginActivity : BaseActivity() {
             getUpgrade()
 
         }
+
+        btnp.setOnClickListener {
+//            RxPermissions(this)
+//                .requestEachCombined(
+//                    Manifest.permission.CAMERA,
+//                    Manifest.permission.READ_PHONE_STATE
+//                )
+//                .subscribe {
+//                    if (it.granted) {
+//                        Log.e("aa","1111")
+//                    } else if (it.shouldShowRequestPermissionRationale) {
+//                        Log.e("aa","222")
+//
+//                    } else {
+//                        Log.e("aa","3333")
+//
+//                    }
+//                }
+
+
+            EsayPermissions.with(this)
+//                .constantRequest()
+                .permission(Permission.WRITE_EXTERNAL_STORAGE,Permission.CAMERA,Permission.RECORD_AUDIO)
+                .request(object: OnPermission{
+                    override fun noPermission(denied: MutableList<String>?, quick: Boolean) {
+                        if (quick) {
+                            LogUtil.d("被永久拒绝权限")
+                            EsayPermissions.gotoPermissionSettings(mContext);
+                        } else {
+                            LogUtil.d("暂时拒绝权限")
+                        }
+                    }
+
+                    override fun hasPermission(granted: MutableList<String>?, isAll: Boolean) {
+                        if (isAll) {
+                            LogUtil.d("获取权限成功")
+                        } else {
+                            LogUtil.d("获取部分权限成功")
+                        }
+
+                    }
+
+                })
+
+
+        }
     }
+
 
     fun getUpgrade() {
         DcServiceFactory.getService().upgrade()

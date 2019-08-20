@@ -72,5 +72,12 @@ dependencies {
     api 'com.trello.rxlifecycle3:rxlifecycle-android-lifecycle-kotlin:3.0.0'
 
 
+    //https://github.com/yanzhenjie/AndPermission
+    //https://www.jianshu.com/p/7e231fc25fb3
+//    api 'com.yanzhenjie.permission:x:2.0.1'
+
+//    api 'com.github.tbruyelle:rxpermissions:0.10.2'
+
+    api 'com.apeng:EsayPermissions:1.0.0'
 
 }
