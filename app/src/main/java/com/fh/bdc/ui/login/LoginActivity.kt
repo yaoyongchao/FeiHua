@@ -1,5 +1,6 @@
 package com.fh.bdc.ui.login
 
+import android.content.Intent
 import android.util.Log
 import android.view.View
 import com.alibaba.android.arouter.facade.annotation.Route
@@ -12,9 +13,9 @@ import com.fh.baselib.utils.AppUtil
 import com.fh.baselib.utils.LogUtil
 import com.fh.baselib.utils.rx.MyRxScheduler
 import com.fh.bdc.bean.UpgradeBean
+import com.fh.bdc.demo.TwoActivity
 import com.fh.bdc.ui.dialog.UpgradeAppDialog
 import com.fh.bdc.ui.dialog.UpgradeProgressDialog
-import com.fh.bdc.utils.JumpUtil
 import com.fh.bdc.utils.RouteUrl
 import com.weicai.upgradelib.AppDownloadManager
 import com.ygfh.doctor.net.DcServiceFactory
@@ -56,8 +57,8 @@ class LoginActivity : BaseActivity() {
 
     override fun initListener() {
         btn_login.setOnClickListener {
-//            startActivity(Intent(mContext,TwoActivity::class.java))
-            JumpUtil.jumpActivity(RouteUrl.home)
+            startActivity(Intent(mContext, TwoActivity::class.java))
+//            JumpUtil.jumpActivity(RouteUrl.home)
         }
 
         btn_update.setOnClickListener {
@@ -66,27 +67,11 @@ class LoginActivity : BaseActivity() {
         }
 
         btnp.setOnClickListener {
-//            RxPermissions(this)
-//                .requestEachCombined(
-//                    Manifest.permission.CAMERA,
-//                    Manifest.permission.READ_PHONE_STATE
-//                )
-//                .subscribe {
-//                    if (it.granted) {
-//                        Log.e("aa","1111")
-//                    } else if (it.shouldShowRequestPermissionRationale) {
-//                        Log.e("aa","222")
-//
-//                    } else {
-//                        Log.e("aa","3333")
-//
-//                    }
-//                }
-
 
             EsayPermissions.with(this)
 //                .constantRequest()
-                .permission(Permission.WRITE_EXTERNAL_STORAGE,Permission.CAMERA,Permission.RECORD_AUDIO)
+//                .permission(Permission.WRITE_EXTERNAL_STORAGE,Permission.CAMERA,Permission.RECORD_AUDIO)
+                .permission(Permission.WRITE_EXTERNAL_STORAGE)
                 .request(object: OnPermission{
                     override fun noPermission(denied: MutableList<String>?, quick: Boolean) {
                         if (quick) {
@@ -103,12 +88,8 @@ class LoginActivity : BaseActivity() {
                         } else {
                             LogUtil.d("获取部分权限成功")
                         }
-
                     }
-
                 })
-
-
         }
     }
 
