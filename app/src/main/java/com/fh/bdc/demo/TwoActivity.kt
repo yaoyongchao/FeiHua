@@ -1,5 +1,6 @@
 package com.fh.bdc.demo
 
+import android.content.Intent
 import android.os.Environment
 import android.util.Log
 import com.fh.baselib.mvp.MvpBaseActivity
@@ -16,7 +17,7 @@ import java.text.NumberFormat
 
 
 class TwoActivity : MvpBaseActivity<TwoContract.TwoView,TwoPresenter>(),TwoContract.TwoView {
-    var url = "http://192.168.10.32:8080/MyDemo/"
+    var url = "http://192.168.10.38:8080/MyDemo/"
     val ROOT_PATH = Environment.getExternalStorageDirectory()//+File.separator// sd路径
 
     /**
@@ -80,6 +81,14 @@ class TwoActivity : MvpBaseActivity<TwoContract.TwoView,TwoPresenter>(),TwoContr
                 }
 
             })
+        }
+
+        btn_picture.setOnClickListener {
+            startActivity(Intent(mContext,PictureActivity::class.java))
+        }
+
+        btn_vv.setOnClickListener {
+            startActivity(Intent(mContext,AvActivity::class.java))
         }
     }
 
