@@ -33,6 +33,7 @@ class TwoActivity : MvpBaseActivity<TwoContract.TwoView,TwoPresenter>(),TwoContr
     override fun initView() {
         tv.text = "状态--" + BuildConfig.DEBUG
         Log.e("aa","--"+ ROOT_PATH.toString()+ "***" + File.separator)
+
     }
 
     override fun initData() {
@@ -90,6 +91,10 @@ class TwoActivity : MvpBaseActivity<TwoContract.TwoView,TwoPresenter>(),TwoContr
         btn_vv.setOnClickListener {
             startActivity(Intent(mContext,AvActivity::class.java))
         }
+
+        btn_pin.setOnClickListener {
+
+        }
     }
 
     override fun loginSuccess() {
@@ -104,4 +109,9 @@ class TwoActivity : MvpBaseActivity<TwoContract.TwoView,TwoPresenter>(),TwoContr
         val result = numberFormat.format(current.toFloat() / total.toFloat() * 100)
         return result
     }
+
+
+//    fun jointAudio(audioPath : String ,toPaht :String ) throws Exception {
+//
+//    }
 }
