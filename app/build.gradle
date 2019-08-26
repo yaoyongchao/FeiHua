@@ -6,6 +6,8 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
+//apply plugin: 'org.greenrobot.greendao' // apply plugin
+
 kapt {
     arguments {
         arg("AROUTER_MODULE_NAME", project.getName())
@@ -146,4 +148,6 @@ dependencies {
     implementation project(path: ':upgradelib')
 
     implementation 'cn.jzvd:jiaozivideoplayer:7.0.5'
+
+   // implementation 'org.greenrobot:greendao:3.2.2' // add library
 }
