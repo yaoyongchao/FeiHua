@@ -95,9 +95,13 @@ class TwoActivity : MvpBaseActivity<TwoContract.TwoView,TwoPresenter>(),TwoContr
         btn_pin.setOnClickListener {
 
         }
+        btn_list.setOnClickListener {
+            startActivity(Intent(mContext,ListDemoActivity::class.java))
+        }
     }
 
     override fun loginSuccess() {
+
 
     }
 
