@@ -40,6 +40,7 @@ class ListDemoActivity : BaseActivity() {
         list.add("7")
         list.add("8")
         list.add("9")
+        var s = ""
         adapter = BaseAdapter(R.layout.item_demo,list) { view: View, bean: String,i: Int ->
             view.tv.text = bean
         }

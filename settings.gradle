@@ -1,3 +1,4 @@
 rootProject.name='FeiHua'
 include ':app', ':upgradelib'
 include ':baselib'
+include ':vgalib'

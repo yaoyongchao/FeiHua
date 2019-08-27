@@ -56,8 +56,10 @@
         />
 
     <Button
+        android:id="@+id/btn_vga"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="音视频"
         />
     <Button
         android:layout_width="wrap_content"

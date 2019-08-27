@@ -2,6 +2,7 @@ package com.fh.baselib
 
 import android.app.Application
 import android.content.Context
+import androidx.multidex.MultiDex
 import com.fh.baselib.utils.LogUtil
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.scwang.smartrefresh.layout.constant.SpinnerStyle
@@ -15,8 +16,14 @@ import com.scwang.smartrefresh.layout.header.ClassicsHeader
  */
 open class BaseApplication: Application(){
 
+    override fun attachBaseContext(base: Context?) {
+        super.attachBaseContext(base)
+        MultiDex.install(this)
+    }
+
     override fun onCreate() {
         super.onCreate()
+
         initViews()
     }
 

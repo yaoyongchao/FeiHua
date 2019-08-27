@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="#252C39"
+    tools:context=".VoiceCallActivity">
+
+    <ImageView
+        android:id="@+id/img_avatar"
+        android:layout_width="@dimen/avatar_size"
+        android:layout_height="@dimen/avatar_size"
+        android:src="@drawable/ic_usericon_five"
+        android:layout_marginTop="80dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="张三"
+        android:textSize="26sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_call_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_marginTop="15dp"
+        android:textSize="18sp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="60dp"
+        android:padding="@dimen/mute_margin"
+        >
+
+        <LinearLayout
+            style="@style/llyt_mute"
+            >
+            <ImageView
+                android:id="@+id/img_answer"
+                android:layout_width="@dimen/mute"
+                android:layout_height="@dimen/mute"
+                android:src="@drawable/ic_answer"
+                />
+
+            <TextView
+                style="@style/tv_mute"
+                android:text="@string/answer"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/llyt_mute"
+            >
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/llyt_mute"
+            >
+            <ImageView
+                android:id="@+id/img_hangup1"
+                android:layout_width="@dimen/mute"
+                android:layout_height="@dimen/mute"
+                android:src="@drawable/ic_hangup"
+                />
+
+            <TextView
+                style="@style/tv_mute"
+                android:text="@string/hangup"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="60dp"
+        android:padding="@dimen/mute_margin"
+        android:visibility="gone"
+        >
+
+        <LinearLayout
+            style="@style/llyt_mute"
+            >
+            <ImageView
+                android:id="@+id/img_mute"
+                android:layout_width="@dimen/mute"
+                android:layout_height="@dimen/mute"
+                android:src="@drawable/ic_jingyin_normal"
+                />
+
+            <TextView
+                style="@style/tv_mute"
+                android:text="@string/mute"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/llyt_mute"
+            >
+            <ImageView
+                android:id="@+id/img_hangup"
+                android:layout_width="@dimen/mute"
+                android:layout_height="@dimen/mute"
+                android:src="@drawable/ic_hangup"
+                />
+
+            <TextView
+                style="@style/tv_mute"
+                android:text="@string/hangup"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/llyt_mute"
+            >
+            <ImageView
+                android:id="@+id/img_handsfree"
+                android:layout_width="@dimen/mute"
+                android:layout_height="@dimen/mute"
+                android:src="@drawable/ic_mianti_normal"
+                />
+
+            <TextView
+                style="@style/tv_mute"
+                android:text="@string/handsfree"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

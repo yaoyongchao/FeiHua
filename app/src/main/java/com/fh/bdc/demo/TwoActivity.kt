@@ -11,6 +11,7 @@ import com.fh.bdc.BuildConfig
 import com.ygfh.doctor.net.DcServiceFactory
 import com.ygfh.doctor.ui.demo.TwoContract
 import com.ygfh.doctor.ui.demo.TwoPresenter
+import com.yyc.vgalib.LoginVgaActivity
 import kotlinx.android.synthetic.main.activity_two.*
 import java.io.File
 import java.text.NumberFormat
@@ -98,6 +99,11 @@ class TwoActivity : MvpBaseActivity<TwoContract.TwoView,TwoPresenter>(),TwoContr
         btn_list.setOnClickListener {
             startActivity(Intent(mContext,ListDemoActivity::class.java))
         }
+
+        btn_vga.setOnClickListener {
+            startActivity(Intent(mContext,LoginVgaActivity::class.java))
+        }
+
     }
 
     override fun loginSuccess() {

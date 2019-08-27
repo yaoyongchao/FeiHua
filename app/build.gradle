@@ -25,6 +25,9 @@ android {
         versionName "1.1.0"
         flavorDimensions "versionCode"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        //添加到此处
+        multiDexEnabled true
     }
 //    buildTypes {
 //        release {
@@ -148,6 +151,7 @@ dependencies {
     implementation project(path: ':upgradelib')
 
     implementation 'cn.jzvd:jiaozivideoplayer:7.0.5'
+    implementation project(path: ':vgalib')
 
-   // implementation 'org.greenrobot:greendao:3.2.2' // add library
+    // implementation 'org.greenrobot:greendao:3.2.2' // add library
 }

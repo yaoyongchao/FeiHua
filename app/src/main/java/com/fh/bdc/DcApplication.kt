@@ -3,6 +3,7 @@ package com.fh.bdc
 import com.alibaba.android.arouter.launcher.ARouter
 import com.fh.baselib.BaseApplication
 import com.fh.baselib.utils.LogUtil
+import com.yyc.vgalib.HxHelper
 
 /**
  * Author: YongChao
@@ -20,6 +21,12 @@ class DcApplication: BaseApplication() {
             ARouter.openDebug()
         }
         ARouter.init(this)
+
+        //初始化环信
+//        HuanXinApplicationHelper.initHuanXin(this)
+
+        HxHelper.instance.init(this)
+
     }
 
 }
