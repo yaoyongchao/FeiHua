@@ -12,9 +12,14 @@ import com.ygfh.doctor.net.DcServiceFactory
 import com.ygfh.doctor.ui.demo.TwoContract
 import com.ygfh.doctor.ui.demo.TwoPresenter
 import com.yyc.vgalib.LoginVgaActivity
+import gorden.rxbus2.RxBus
+import gorden.rxbus2.Subscribe
+import gorden.rxbus2.ThreadMode
 import kotlinx.android.synthetic.main.activity_two.*
 import java.io.File
 import java.text.NumberFormat
+
+
 
 
 class TwoActivity : MvpBaseActivity<TwoContract.TwoView,TwoPresenter>(),TwoContract.TwoView {
@@ -104,8 +109,21 @@ class TwoActivity : MvpBaseActivity<TwoContract.TwoView,TwoPresenter>(),TwoContr
             startActivity(Intent(mContext,LoginVgaActivity::class.java))
         }
 
+        btn_rx.setOnClickListener {
+            RxBus.get().send(10001,12)
+        }
+
     }
 
+    @Subscribe(code = 1005, threadMode = ThreadMode.MAIN)
+    fun receive1005() {
+        Log.i("rxbus_log", "code  1005 ")
+    }
+
+    @Subscribe(code = 10001)
+    fun receive1007(msg: Int?) {
+        Log.i("rxbus_log", "code  1007  int:" + msg!!)
+    }
     override fun loginSuccess() {
 
 

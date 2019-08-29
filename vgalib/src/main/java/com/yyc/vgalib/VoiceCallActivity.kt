@@ -1,12 +1,23 @@
 package com.yyc.vgalib
 
+import android.media.AudioManager
+import android.media.RingtoneManager
+import android.media.SoundPool
 import android.os.Bundle
+import android.telephony.TelephonyManager
+import android.view.View
 import android.widget.Toast
+import com.fh.baselib.utils.LogUtil
 import com.hyphenate.chat.EMCallStateChangeListener
 import com.hyphenate.chat.EMClient
-import gorden.rxbus2.RxBus
+import com.hyphenate.exceptions.HyphenateException
+import com.yyc.vgalib.utils.PhoneStateManager
 import kotlinx.android.synthetic.main.activity_voice_call.*
 import java.util.*
+
+
+
+
 
 
 
@@ -16,6 +27,9 @@ import java.util.*
  * Description: 音频界面
  */
 class VoiceCallActivity : CallActivity() {
+    private val isMuteState: Boolean = false
+    private val isHandsfreeState: Boolean = false
+    val MAKE_CALL_TIMEOUT:Long = 50 * 1000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +46,26 @@ class VoiceCallActivity : CallActivity() {
         msgid = UUID.randomUUID().toString()
         username = getIntent().getStringExtra("username");
         isInComingCall = getIntent().getBooleanExtra("isComingCall", false);
+        llyt_incoming.visibility = if (isInComingCall) View.VISIBLE else View.GONE
+        llyt_outgoing.visibility = if (isInComingCall) View.GONE else View.VISIBLE
+
+        if (!isInComingCall) {//outgoing call
+            soundPool = SoundPool(1,AudioManager.STREAM_RING,0)
+            outgoing = soundPool.load(this,R.raw.em_outgoing,1)
+            handler.sendEmptyMessage(MSG_CALL_MAKE_VOICE)
+            handler.postDelayed({ streamID = playMakeCallSounds() }, 300)
+
+        } else {
+            val ringUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE)
+            audioManager.mode = AudioManager.MODE_RINGTONE
+            audioManager.isSpeakerphoneOn = true
+            ringtone = RingtoneManager.getRingtone(this, ringUri)
+            ringtone.play()
+        }
+
+
+        handler.removeCallbacks(timeoutHangup);
+        handler.postDelayed(timeoutHangup, MAKE_CALL_TIMEOUT);
     }
 
     override fun layoutId(): Int {
@@ -45,10 +79,16 @@ class VoiceCallActivity : CallActivity() {
         img_answer.setOnClickListener {
             img_answer.isEnabled = false
             tv_call_state.text = "正在接听..."
-            RxBus.get().send(MSG_SEND_CODE,MSG_CALL_ANSWER)
+            LogUtil.d("点击了 answer按钮")
+            var msg = handler.obtainMessage()
+            msg.arg1 = 1234
+//            handler.sendMessage(msg)
+            handler.sendEmptyMessage(MSG_CALL_ANSWER)
         }
 
     }
+
+
 
     private fun addCallStateListener() {
 //        callStateListener = EMCallStateChangeListener()
@@ -60,9 +100,20 @@ class VoiceCallActivity : CallActivity() {
                     tv_call_state.text = "正在连接中..."
                 }
                 EMCallStateChangeListener.CallState.CONNECTED -> runOnUiThread {
+                    tv_call_state.text = "已经和对方建立连接"
                 }
 
-                EMCallStateChangeListener.CallState.ACCEPTED -> {
+                EMCallStateChangeListener.CallState.ACCEPTED -> runOnUiThread{//接收
+
+                    soundPool?.stop(streamID)
+                    if (!isHandsfreeState)
+                        closeSpeakerOn()
+
+                    tv_call_state.text = getResources().getString(R.string.In_the_call);
+                    callingState = CallingState.NORMAL
+
+                    PhoneStateManager.get(mContext).addStateCallback(phoneStateCallback)
+
 //                    handler.removeCallbacks(timeoutHangup)
 //                    runOnUiThread {
 //                        try {
@@ -230,4 +281,40 @@ class VoiceCallActivity : CallActivity() {
 
 
     }
+
+    var phoneStateCallback: PhoneStateManager.PhoneStateCallback =
+        PhoneStateManager.PhoneStateCallback { state, incomingNumber ->
+            when (state) {
+                TelephonyManager.CALL_STATE_RINGING   // 电话响铃
+                -> {
+                }
+                TelephonyManager.CALL_STATE_IDLE      // 电话挂断
+                ->
+                    // resume current voice conference.
+                    if (isMuteState) {
+                        try {
+                            EMClient.getInstance().callManager().resumeVoiceTransfer()
+                        } catch (e: HyphenateException) {
+                            e.printStackTrace()
+                        }
+
+                    }
+                TelephonyManager.CALL_STATE_OFFHOOK   // 来电接通 或者 去电，去电接通  但是没法区分
+                ->
+                    // pause current voice conference.
+                    if (!isMuteState) {
+                        try {
+                            EMClient.getInstance().callManager().pauseVoiceTransfer()
+                        } catch (e: HyphenateException) {
+                            e.printStackTrace()
+                        }
+
+                    }
+            }
+        }
+
+    override fun onDestroy() {
+        super.onDestroy()
+    }
+
 }

@@ -3,4 +3,16 @@
     <string name="handsfree">免提</string>
     <string name="hangup">挂断</string>
     <string name="answer">接听</string>
+    <string name="be_removing">正在移出……</string>
+    <string name="call_duration">通话时长</string>
+    <string name="Refused">已拒绝</string>
+    <string name="The_other_party_has_refused_to">对方已拒绝</string>
+    <string name="The_other_is_not_online">对方不在线</string>
+    <string name="The_other_is_on_the_phone">对方正在通话中</string>
+    <string name="The_other_party_did_not_answer">对方未接听</string>
+    <string name="did_not_answer">未接听</string>
+    <string name="Has_been_cancelled">已取消</string>
+    <string name="call_version_inconsistent">通话协议版本不一致</string>
+    <string name="In_the_call">通话中……</string>
+
 </resources>

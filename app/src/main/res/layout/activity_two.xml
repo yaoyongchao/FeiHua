@@ -62,8 +62,10 @@
         android:text="音视频"
         />
     <Button
+        android:id="@+id/btn_rx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Rx测试"
         />
 
 </LinearLayout>

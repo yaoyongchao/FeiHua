@@ -1,6 +1,7 @@
 package com.fh.baselib.base
 
 import android.content.Context
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.View
 import android.widget.LinearLayout
@@ -29,6 +30,7 @@ abstract class BaseActivity : RxAppCompatActivity() , CustomToolBar.OnClickLeftL
         mContext = this
         if (isFullScreen())
             ActivityUtil.transparentStatusBar(window)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT//禁止横屏
         super.onCreate(savedInstanceState)
         setContentView(initRootView())
         ActivityManagers.instance.addActivity(this)

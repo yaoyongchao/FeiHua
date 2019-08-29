@@ -23,7 +23,9 @@
         <activity android:name=".demo.AvActivity" />
         <activity android:name=".demo.PictureActivity" />
         <activity android:name=".ui.login.LoginActivity" /> <!-- <activity android:name=".MainActivity"></activity> -->
-        <activity android:name=".ui.login.StartupActivity">
+        <activity android:name=".ui.login.StartupActivity"
+            android:theme="@style/Splash"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

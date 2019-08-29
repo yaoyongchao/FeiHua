@@ -9,5 +9,5 @@ object UserVga {
     val name = "111122221"
     val password = "123456"
 
-    val callId = "111122222"
+    val callId = "111122222 "
 }
