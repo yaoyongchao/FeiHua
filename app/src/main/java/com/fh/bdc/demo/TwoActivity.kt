@@ -113,6 +113,9 @@ class TwoActivity : MvpBaseActivity<TwoContract.TwoView,TwoPresenter>(),TwoContr
             RxBus.get().send(10001,12)
         }
 
+        btn_refresh.setOnClickListener {
+            startActivity(Intent(mContext,FreshActivity::class.java))
+        }
     }
 
     @Subscribe(code = 1005, threadMode = ThreadMode.MAIN)
