@@ -1,7 +1,6 @@
 package com.fh.bdc.demo
 
 import android.util.Log
-import android.view.View
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -43,15 +42,20 @@ class ListDemoActivity : BaseActivity() {
 //        list.add("8")
         list.add("9")
         var s = ""
-        adapter = BaseAdapter(R.layout.item_demo,list) { view: View, bean: String,position: Int ->
-            view.tv.text = bean
+//        adapter = BaseAdapter(R.layout.item_demo,list) { view: View, bean: String,position: Int ->
+//            view.tv.text = bean
+//        }
+        adapter = BaseAdapter(R.layout.item_demo,list){view, s, i ->
+            view.tv.text = s
         }
         rv.adapter = adapter
 //        rv.adapter = MyAdapter(list)
 //        rv.adapter = EmptyAdapter(list)
         MyUser("aa") {f:Float,i:Int ->
-            Log.e("aa","wo shi yaoren " + f  + i)
+            Log.e("aa","我 是 ----" + f  + i)
          }
+
+        Teacher(){i, s ->  }
     }
 
 

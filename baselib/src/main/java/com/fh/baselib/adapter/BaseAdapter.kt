@@ -11,7 +11,7 @@ import com.fh.baselib.R
  * Date: 19-8-30 下午4:29
  * Description: RecyclerView.Adapter 基础类封装
  */
-open class BaseAdapter<T>(val layoutResourceId: Int, val items: List<T>, val init: (View, T,Int) -> Unit) :
+open class BaseAdapter<T>(val layoutResourceId: Int, var items: List<T>, var bindView: (View, T,Int) -> Unit) :
     RecyclerView.Adapter<BaseAdapter.ViewHolder<T>>() {
     /**
      * 0:空布局  1： 非空布局
@@ -21,10 +21,10 @@ open class BaseAdapter<T>(val layoutResourceId: Int, val items: List<T>, val ini
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder<T> {
         if (viewType == VIEW_TYPE_EMPTY) {
             val viewEmpty = LayoutInflater.from(parent.context).inflate(R.layout.layout_rv_empty,parent,false)
-            return ViewHolder(viewEmpty,init)
+            return ViewHolder(viewEmpty,bindView)
         }
         val view = LayoutInflater.from(parent.context).inflate(layoutResourceId,parent,false)
-        return ViewHolder(view, init)
+        return ViewHolder(view, bindView)
     }
 
     override fun onBindViewHolder(holder: ViewHolder<T>, position: Int) {
@@ -39,9 +39,9 @@ open class BaseAdapter<T>(val layoutResourceId: Int, val items: List<T>, val ini
 
     override fun getItemCount() = if (items.size == 0) 1 else items.size
 
-    class ViewHolder<in T>(view: View, val init: (View, T,Int) -> Unit) : RecyclerView.ViewHolder(view) {
+    class ViewHolder<in T>(view: View, val bindView: (View, T,Int) -> Unit) : RecyclerView.ViewHolder(view) {
         fun bindForecast(item: T,position: Int) {
-                init(itemView, item,position)
+                bindView(itemView, item,position)
         }
     }
 }
