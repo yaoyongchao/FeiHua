@@ -32,15 +32,15 @@ class ListDemoActivity : BaseActivity() {
     private fun initRv() {
         rv.layoutManager = LinearLayoutManager(mContext) as RecyclerView.LayoutManager?
         rv.addItemDecoration(MyDivider(mContext, DividerItemDecoration.VERTICAL))
-        list.add("1")
-        list.add("2")
-        list.add("3")
-        list.add("4")
-        list.add("5 ")
+//        list.add("1")
+//        list.add("2")
+//        list.add("3")
+//        list.add("4")
+//        list.add("5 ")
 //        list.add("6")
 //        list.add("7")
 //        list.add("8")
-        list.add("9")
+//        list.add("9")
         var s = ""
 //        adapter = BaseAdapter(R.layout.item_demo,list) { view: View, bean: String,position: Int ->
 //            view.tv.text = bean
@@ -48,6 +48,7 @@ class ListDemoActivity : BaseActivity() {
         adapter = BaseAdapter(R.layout.item_demo,list){view, s, i ->
             view.tv.text = s
         }
+        adapter.isShowEmptyView = false
         rv.adapter = adapter
 //        rv.adapter = MyAdapter(list)
 //        rv.adapter = EmptyAdapter(list)

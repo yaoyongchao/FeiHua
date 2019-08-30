@@ -18,8 +18,9 @@ open class BaseAdapter<T>(val layoutResourceId: Int, var items: List<T>, var bin
      */
     val VIEW_TYPE_ITEM = 1
     val VIEW_TYPE_EMPTY = 0
+    var isShowEmptyView = true
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder<T> {
-        if (viewType == VIEW_TYPE_EMPTY) {
+        if (isShowEmptyView && viewType == VIEW_TYPE_EMPTY) {
             val viewEmpty = LayoutInflater.from(parent.context).inflate(R.layout.layout_rv_empty,parent,false)
             return ViewHolder(viewEmpty,bindView)
         }
@@ -34,14 +35,16 @@ open class BaseAdapter<T>(val layoutResourceId: Int, var items: List<T>, var bin
     }
 
     override fun getItemViewType(position: Int): Int {
-        return if (items.size == 0) VIEW_TYPE_EMPTY else VIEW_TYPE_ITEM
+        return if (isShowEmptyView && items.size == 0) VIEW_TYPE_EMPTY else VIEW_TYPE_ITEM
     }
 
-    override fun getItemCount() = if (items.size == 0) 1 else items.size
+    override fun getItemCount() = if (isShowEmptyView && items.size == 0) 1 else items.size
 
     class ViewHolder<in T>(view: View, val bindView: (View, T,Int) -> Unit) : RecyclerView.ViewHolder(view) {
         fun bindForecast(item: T,position: Int) {
                 bindView(itemView, item,position)
         }
     }
+
+
 }
