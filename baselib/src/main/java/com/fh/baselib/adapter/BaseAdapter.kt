@@ -14,7 +14,7 @@ import com.fh.baselib.R
 open class BaseAdapter<T>(val layoutResourceId: Int, val items: List<T>, val init: (View, T,Int) -> Unit) :
     RecyclerView.Adapter<BaseAdapter.ViewHolder<T>>() {
     /**
-     * viewType--分别为item以及空view
+     * 0:空布局  1： 非空布局
      */
     val VIEW_TYPE_ITEM = 1
     val VIEW_TYPE_EMPTY = 0

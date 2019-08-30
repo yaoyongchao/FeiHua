@@ -14,7 +14,6 @@ class BaseAdapter1<T>(val layoutResourceId: Int, val items: List<T>, val init: (
     }
 
     override fun onBindViewHolder(holder: ViewHolder<T>, position: Int) {
-
         holder.bindForecast(items[position],position)
     }
 
