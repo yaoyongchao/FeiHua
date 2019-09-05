@@ -10,10 +10,12 @@ import com.fh.baselib.R
 import com.fh.baselib.utils.ActivityManagers
 import com.fh.baselib.utils.ActivityUtil
 import com.fh.baselib.utils.ToastUtil
+import com.fh.baselib.utils.UtilsStyle
 import com.fh.baselib.widget.CustomToolBar
 import com.fh.baselib.widget.LoadingDialog
 import com.trello.rxlifecycle3.components.support.RxAppCompatActivity
 import gorden.rxbus2.RxBus
+import qiu.niorgai.StatusBarCompat
 
 /**
  * Author: Austin
@@ -28,8 +30,13 @@ abstract class BaseActivity : RxAppCompatActivity() , CustomToolBar.OnClickLeftL
 
     override fun onCreate(savedInstanceState: Bundle?) {
         mContext = this
-        if (isFullScreen())
+        if (isFullScreen()) {
             ActivityUtil.transparentStatusBar(window)
+        } else {
+//            StatusBarCompat.setStatusBarColor(this,resources.getColor(R.color.bg_toolbar))
+            StatusBarCompat.setStatusBarColor(this,resources.getColor(R.color.transparent))
+            UtilsStyle.statusBarLightMode(this)
+        }
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT//禁止横屏
         super.onCreate(savedInstanceState)
         setContentView(initRootView())

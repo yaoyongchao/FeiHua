@@ -1,7 +1,9 @@
 <resources>
-    <string name="tab1">tab1</string>
-    <string name="tab2">tab2</string>
-    <string name="tab3">tab3</string>
+    <string name="tab1">工作台</string>
+    <string name="tab2">粉丝</string>
+    <string name="tab3">收益</string>
+    <string name="tab4">我的</string>
     <string name="app_upgrade">版本更新</string>
     <string name="determine">确定</string>
+    <string name="experts">医生中心</string>
 </resources>

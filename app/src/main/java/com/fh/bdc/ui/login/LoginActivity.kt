@@ -1,21 +1,16 @@
 package com.fh.bdc.ui.login
 
-import android.content.Intent
 import android.util.Log
 import android.view.View
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.apeng.permissions.EsayPermissions
-import com.apeng.permissions.OnPermission
-import com.apeng.permissions.Permission
 import com.fh.baselib.base.BaseActivity
 import com.fh.baselib.http.BaseObserver
-import com.fh.baselib.utils.AppUtil
 import com.fh.baselib.utils.LogUtil
 import com.fh.baselib.utils.rx.MyRxScheduler
 import com.fh.bdc.bean.UpgradeBean
-import com.fh.bdc.demo.TwoActivity
 import com.fh.bdc.ui.dialog.UpgradeAppDialog
 import com.fh.bdc.ui.dialog.UpgradeProgressDialog
+import com.fh.bdc.utils.JumpUtil
 import com.fh.bdc.utils.RouteUrl
 import com.weicai.upgradelib.AppDownloadManager
 import com.ygfh.doctor.net.DcServiceFactory
@@ -48,7 +43,8 @@ class LoginActivity : BaseActivity() {
 
     override fun initView() {
         appDownloadManager = AppDownloadManager(this)
-        tv_version_name.text = AppUtil.getVersionName(this)
+        showToolbar(false)
+//        tv_version_name.text = AppUtil.getVersionName(this)
 
     }
 
@@ -57,16 +53,18 @@ class LoginActivity : BaseActivity() {
 
     override fun initListener() {
         btn_login.setOnClickListener {
-            startActivity(Intent(mContext, TwoActivity::class.java))
-//            JumpUtil.jumpActivity(RouteUrl.home)
+//            startActivity(Intent(mContext, TwoActivity::class.java))
+            JumpUtil.jumpActivity(RouteUrl.home)
         }
 
-        btn_update.setOnClickListener {
+        //升级
+       /* btn_update.setOnClickListener {
             getUpgrade()
 
-        }
+        }*/
 
-        btnp.setOnClickListener {
+//        权限管理
+        /*btnp.setOnClickListener {
 
             EsayPermissions.with(this)
 //                .constantRequest()
@@ -90,7 +88,7 @@ class LoginActivity : BaseActivity() {
                         }
                     }
                 })
-        }
+        }*/
     }
 
 

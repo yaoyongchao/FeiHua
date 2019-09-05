@@ -8,6 +8,10 @@ package com.fh.bdc.demo
 
 class MyUser(val str:String,val aa: (Float,Int) -> Unit) {
 
+    var ab :String ?= null
+    fun test() {
+    }
+
 
 
 }

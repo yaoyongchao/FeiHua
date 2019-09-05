@@ -14,4 +14,28 @@
         <item name="android:windowBackground">@drawable/splash</item>
         <item name="android:windowFullscreen">true</item>
     </style>
+
+    <style name="EdtClear" parent="WidthHeightMW">
+        <item name="android:layout_height">@dimen/login_input_height</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:inputType">phone</item>
+        <item name="android:background">@drawable/bg_border_circular_selector</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:paddingLeft">5dp</item>
+    </style>
+
+    <style name="BtnVerifyCode" parent="EdtClear">
+        <item name="android:background">@drawable/bg_border_verify_code_selector</item>
+    </style>
+
+
+
+    <style name="Avatar" parent="AppTheme">
+        <item name="android:background">@color/white</item>
+        <item name="android:textColor">@color/nameColor</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
 </resources>

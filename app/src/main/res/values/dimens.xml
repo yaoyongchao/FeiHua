@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="login_input_height">46dp</dimen>
+    <dimen name="layout_interval">8dp</dimen>
+
+</resources>
