@@ -3,6 +3,7 @@ package com.fh.cplib.common
 object CommonParam {
 //    var TOKEN_DEFAULT = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
     val IS_FIRST = "IsFirst"
+    val WEB_URL = "webUrl"
 //    val USERID = "userId"
 //    val TOKEN = "Token"
 //    val CUR_STATION_ID = "curStationId"

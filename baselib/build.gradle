@@ -85,9 +85,14 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
     // 修改状态栏颜色   https://github.com/niorgai/StatusBarCompat
-    api ('com.github.niorgai:StatusBarCompat:2.3.3', {
+    api('com.github.niorgai:StatusBarCompat:2.3.3', {
         exclude group: 'androidx.appcompat:appcompat'
         exclude group: 'com.google.android.material:material'
     })
+
+    //与H5加载沟通框架 https://github.com/lzyzsd/JsBridge
+
+    api 'com.github.lzyzsd:jsbridge:1.0.4'
+
 
 }

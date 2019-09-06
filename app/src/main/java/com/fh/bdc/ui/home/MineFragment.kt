@@ -41,7 +41,7 @@ class MineFragment : BaseFragment() {
         }
 
         rootView.fv_setting.setOnClickListener {
-
+            JumpUtil.jumpActivity(RouteUrl.mysetting)
         }
     }
 

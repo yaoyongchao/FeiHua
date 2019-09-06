@@ -22,5 +22,8 @@ class RouteUrl {
         const val award = "/ticket/award"
 
         const val personalInformation = "/mine/information"
+        const val mysetting = "/mine/mysetting"
+
+        const val webView = "/web/webView"
     }
 }

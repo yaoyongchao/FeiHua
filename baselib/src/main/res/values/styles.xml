@@ -19,14 +19,7 @@
         <item name="android:windowBackground">@color/transparent</item>
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowContentOverlay">@null</item>
-        <item name="android:windowTitleStyle">@style/myTitle</item>
     </style>
-
-    <style name="myTitle">
-        <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">20sp</item>
-    </style>
-
 
 
     <style name="TitleToolbar" parent="AppTheme">

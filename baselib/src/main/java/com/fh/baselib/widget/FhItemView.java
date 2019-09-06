@@ -53,4 +53,9 @@ public class FhItemView extends LinearLayout {
         mAttributes.recycle();
 
     }
+
+    public void setRightText(String s) {
+        if(tvRight!=null)
+            tvRight.setText(s);
+    }
 }
