@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:background="@color/red"
+    android:background="@color/white"
     android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
-        android:background="@color/white"
+        android:paddingRight="@dimen/margin_default"
         android:gravity="center_vertical"
         >
 
@@ -24,18 +24,20 @@
             />
 
         <TextView
-            android:id="@+id/tv_right"
+            android:id="@+id/tv_right1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="111"
+            tools:text="昨日,无缘晋级篮球世界杯16强小组的中国男篮移师广州,积极地"
+            android:maxEms="13"
+            android:maxLines="1"
+            android:ellipsize="end"
             />
 
         <ImageView
-            android:id="@+id/img_arrow"
+            android:id="@+id/img_arrow1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_arrows_right"
-            android:layout_marginRight="@dimen/margin_default"
             />
 
     </LinearLayout>

@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:fh="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bgDefault"
     android:orientation="vertical"
 
     android:layout_height="match_parent">
@@ -18,10 +19,11 @@
         />
 
     <LinearLayout
+        android:id="@+id/llyt_information"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:orientation="horizontal"
-        android:background="@color/white"
+        android:background="@drawable/bg_white_selector"
         android:layout_marginTop="@dimen/layout_interval"
         android:layout_marginBottom="@dimen/layout_interval"
         android:gravity="center_vertical"
@@ -52,11 +54,27 @@
 
     </LinearLayout>
 
-    <com.fh.baselib.widget.ItemView
-        android:id="@+id/itemview1"
+    <com.fh.baselib.widget.FhItemView
+        android:id="@+id/fv_voice_answer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        fh:text="11"
+        fh:text_title="@string/my_voice_question_and_answer"
+        fh:show_border="true"
+        />
+
+    <com.fh.baselib.widget.FhItemView
+        android:id="@+id/fv_my_video"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        fh:text_title="@string/my_video"
+        android:layout_marginBottom="@dimen/layout_interval"
+        />
+
+    <com.fh.baselib.widget.FhItemView
+        android:id="@+id/fv_setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        fh:text_title="@string/setting"
         />
 
 </LinearLayout>

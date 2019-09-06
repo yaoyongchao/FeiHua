@@ -2,6 +2,9 @@ package com.ygfh.doctor.ui.home
 
 import com.fh.baselib.base.BaseFragment
 import com.fh.bdc.R
+import com.fh.bdc.utils.JumpUtil
+import com.fh.bdc.utils.RouteUrl
+import kotlinx.android.synthetic.main.fragment_mine.view.*
 
 /**
  * Author: YongChao
@@ -25,6 +28,21 @@ class MineFragment : BaseFragment() {
     }
 
     override fun initListener() {
+        rootView.llyt_information.setOnClickListener {
+            JumpUtil.jumpActivity(RouteUrl.personalInformation)
+        }
+
+        rootView.fv_voice_answer.setOnClickListener {
+
+        }
+
+        rootView.fv_my_video.setOnClickListener {
+
+        }
+
+        rootView.fv_setting.setOnClickListener {
+
+        }
     }
 
     override fun initData() {

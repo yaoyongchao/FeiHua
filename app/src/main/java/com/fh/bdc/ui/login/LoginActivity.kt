@@ -26,6 +26,10 @@ import java.util.concurrent.TimeUnit
  */
 @Route(path = RouteUrl.login)
 class LoginActivity : BaseActivity() {
+    override fun isFullScreen(): Boolean {
+        return false
+    }
+
     var upgradeDialog: UpgradeAppDialog? = null
     override fun layoutId(): Int {
         return com.fh.bdc.R.layout.activity_login
@@ -56,6 +60,7 @@ class LoginActivity : BaseActivity() {
 //            startActivity(Intent(mContext, TwoActivity::class.java))
             JumpUtil.jumpActivity(RouteUrl.home)
         }
+
 
         //升级
        /* btn_update.setOnClickListener {

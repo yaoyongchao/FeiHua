@@ -6,4 +6,8 @@
     <string name="app_upgrade">版本更新</string>
     <string name="determine">确定</string>
     <string name="experts">医生中心</string>
+    <string name="my_voice_question_and_answer">我的语音问答</string>
+    <string name="my_video">我的视频</string>
+    <string name="setting">设置</string>
+    <string name="bind_phone">绑定手机</string>
 </resources>

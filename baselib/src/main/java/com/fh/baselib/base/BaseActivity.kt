@@ -2,15 +2,17 @@ package com.fh.baselib.base
 
 import android.content.Context
 import android.content.pm.ActivityInfo
+import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import android.widget.LinearLayout
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.fh.baselib.R
 import com.fh.baselib.utils.ActivityManagers
 import com.fh.baselib.utils.ActivityUtil
 import com.fh.baselib.utils.ToastUtil
-import com.fh.baselib.utils.UtilsStyle
 import com.fh.baselib.widget.CustomToolBar
 import com.fh.baselib.widget.LoadingDialog
 import com.trello.rxlifecycle3.components.support.RxAppCompatActivity
@@ -28,15 +30,24 @@ abstract class BaseActivity : RxAppCompatActivity() , CustomToolBar.OnClickLeftL
     lateinit var customToolBar: CustomToolBar
     lateinit var loadingDialog: LoadingDialog
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         mContext = this
         if (isFullScreen()) {
             ActivityUtil.transparentStatusBar(window)
         } else {
-//            StatusBarCompat.setStatusBarColor(this,resources.getColor(R.color.bg_toolbar))
+            StatusBarCompat.setStatusBarColor(this,resources.getColor(R.color.bg_toolbar))
             StatusBarCompat.setStatusBarColor(this,resources.getColor(R.color.transparent))
-            UtilsStyle.statusBarLightMode(this)
+//            StatusBarCompat.setStatusBarColor(this,resources.getColor(R.color.white))
+
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+//                getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+//            }
         }
+//        UtilsStyle.statusBarLightMode(this)
+        //修改状态栏字体颜色
+        setStatusTextColor()
+        setStatusColor()
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT//禁止横屏
         super.onCreate(savedInstanceState)
         setContentView(initRootView())
@@ -220,4 +231,27 @@ abstract class BaseActivity : RxAppCompatActivity() , CustomToolBar.OnClickLeftL
         fragmentTransaction.commitAllowingStateLoss()
     }
 
+    fun setStatusTextColor() {
+        //https://blog.csdn.net/dummyo/article/details/90108788
+        //取消设置透明状态栏,使 ContentView 内容不再覆盖状态栏
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+
+        //需要设置这个 flag 才能调用 setStatusBarColor 来设置状态栏颜色
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+
+        //设置状态栏字体颜色为黑色
+        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+    }
+
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+    fun setStatusColor() {
+        //取消设置透明状态栏,使 ContentView 内容不再覆盖状态栏
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+
+        //需要设置这个 flag 才能调用 setStatusBarColor 来设置状态栏颜色
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+
+        //设置状态栏背景色
+        window.setStatusBarColor(resources.getColor(R.color.bg_toolbar));
+    }
 }

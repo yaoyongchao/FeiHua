@@ -10,12 +10,15 @@
     <application
         android:name=".DcApplication"
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="${app_icon}"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".demo.FreshActivity"></activity>
+        <activity android:name=".ui.mine.information.PersonalInformationActivity"></activity>
+        <activity android:name=".demo.FreshActivity" />
         <activity android:name=".demo.ListDemoActivity" />
         <activity
             android:name=".demo.JiaoZiActivity"

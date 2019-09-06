@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fh="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".ui.mine.information.PersonalInformationActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/margin_default"
+        android:paddingRight="@dimen/margin_default"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:gravity="center_vertical"
+        android:background="@color/red"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="医生头像"
+            />
+
+        <com.fh.baselib.widget.CircleImageView
+            android:id="@+id/img_avatar"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_avatar"
+            android:layout_marginRight="15dp"
+            android:scaleType="centerCrop"
+            fh:border_width="1dp"
+            fh:border_color="@color/white"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/border_default"
+        android:background="@color/colorBorder"
+        android:layout_marginLeft="@dimen/margin_default"
+        />
+
+    <com.fh.baselib.widget.FhItemView
+        android:id="@+id/fv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        fh:text_title="真实姓名"
+        tools:text_right="张三"
+        fh:show_border="true"
+        fh:show_right_arrow = "false"
+        />
+
+    <com.fh.baselib.widget.FhItemView
+        android:id="@+id/fv_hospital"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        fh:text_title="所属医院"
+        tools:text_right="中国中医科学院望京医院"
+        fh:show_border="true"
+        fh:show_right_arrow = "false"
+        />
+
+    <com.fh.baselib.widget.FhItemView
+        android:id="@+id/fv_department"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        fh:text_title="所属科室"
+        tools:text_right="肿瘤科"
+        fh:show_border="true"
+        fh:show_right_arrow = "false"
+        />
+
+    <com.fh.baselib.widget.FhItemView
+        android:id="@+id/fv_job_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        fh:text_title="医学职称"
+        tools:text_right="主任医师"
+        fh:show_border="true"
+        fh:show_right_arrow = "false"
+        />
+
+    <com.fh.baselib.widget.FhItemView
+        android:id="@+id/fv_qualification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        fh:text_title="医生资质"
+        tools:text_right="已认证"
+        fh:show_border="true"
+        fh:show_right_arrow = "false"
+        />
+
+    <com.fh.baselib.widget.FhItemView
+        android:id="@+id/fv_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        fh:text_title="@string/bind_phone"
+        tools:text_right="138××××8888"
+        fh:show_border="true"
+        fh:show_right_arrow = "false"
+        />
+
+    <com.fh.baselib.widget.FhItemView
+        android:id="@+id/fv_goog_at"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        fh:text_title="擅长疾病"
+        fh:text_right="肺肿瘤，乳腺肿瘤，胃肿瘤肺肿瘤，乳腺肿瘤，胃肿瘤肺肿瘤，乳腺肿瘤，胃肿瘤"
+        fh:show_border="true"
+        fh:show_right_arrow = "false"
+        />
+
+    <com.fh.baselib.widget.FhItemView
+        android:id="@+id/fv_introduction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        fh:text_title="个人介绍"
+        tools:text_right="从医30余年，治疗各种疾病， 慢性病， 等等等等等等等等等等等等等等"
+        fh:show_border="true"
+        fh:show_right_arrow = "false"
+        />
+
+</LinearLayout>

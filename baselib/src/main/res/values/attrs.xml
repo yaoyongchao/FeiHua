@@ -135,7 +135,7 @@
         <attr name="show_ckb_view_top" format="boolean" />
     </declare-styleable>
 
-    <declare-styleable name="ItemView">
+    <declare-styleable name="FhItemView">
 <!--        <attr name="show_left_img" format="boolean" />-->
 <!--        <attr name="left_img_drawable" format="reference|integer" />-->
 <!--        <attr name="right_img_drawable" format="reference|integer" />-->
@@ -143,7 +143,7 @@
 <!--        <attr name="left_img_height" format="dimension" />-->
 <!--        <attr name="right_img_width" format="dimension" />-->
 <!--        <attr name="right_img_height" format="dimension" />-->
-        <attr name="text" format="string" />
+        <attr name="text_title" format="string" />
         <attr name="text_right" format="string" />
         <attr name="show_border" format="boolean" />
         <attr name="show_right_arrow" format="boolean" />
