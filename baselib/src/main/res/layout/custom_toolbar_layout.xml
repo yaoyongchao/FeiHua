@@ -28,7 +28,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="" />
+            tools:text="Title" />
+
+        <TextView
+            android:id="@+id/tv_title_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="ok"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="@dimen/title_img_margin"
+            />
 
         <ImageView
             android:id="@+id/img_title_right"

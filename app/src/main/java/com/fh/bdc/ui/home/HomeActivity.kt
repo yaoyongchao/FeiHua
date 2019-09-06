@@ -1,6 +1,5 @@
 package com.fh.bdc.ui.home
 
-import android.os.Bundle
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -29,9 +28,6 @@ class HomeActivity : BaseActivity() , ViewPager.OnPageChangeListener{
     private  var tabFragments = mutableListOf<BaseFragment>()
     private lateinit var homePagerAdapter: HomePagerAdapter
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun layoutId(): Int {
         return com.fh.bdc.R.layout.activity_home

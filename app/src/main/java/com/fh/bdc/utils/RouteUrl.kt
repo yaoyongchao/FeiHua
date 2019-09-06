@@ -23,6 +23,7 @@ class RouteUrl {
 
         const val personalInformation = "/mine/information"
         const val mysetting = "/mine/mysetting"
+        const val myvoice = "/mine/myvoice"
 
         const val webView = "/web/webView"
     }

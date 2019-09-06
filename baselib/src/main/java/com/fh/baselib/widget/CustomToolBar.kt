@@ -1,9 +1,11 @@
 package com.fh.baselib.widget
 import android.content.Context
+import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
+import androidx.annotation.ColorInt
 import androidx.annotation.DrawableRes
 import com.fh.baselib.R
 import kotlinx.android.synthetic.main.custom_toolbar_layout.view.*
@@ -16,6 +18,7 @@ import kotlinx.android.synthetic.main.custom_toolbar_layout.view.*
 class CustomToolBar: LinearLayout{
     lateinit var onClickLeftListener: OnClickLeftListener
     lateinit var onClickRightListener: OnClickRightListener
+    var onClickTvRightListener: OnClickTvRightListener ?= null
 
     constructor(context: Context?) : this(context,null)
     constructor(context: Context?, attrs: AttributeSet?) : this(context, attrs, 0)
@@ -33,6 +36,9 @@ class CustomToolBar: LinearLayout{
             if (onClickLeftListener != null)
                 onClickLeftListener.onClickLeft(it)
         }
+        tv_title_right.setOnClickListener {
+            onClickTvRightListener?.onClickTvRight(it)
+        }
     }
 
     public fun setOnClickLeftListener (listener: OnClickListener) {
@@ -43,12 +49,24 @@ class CustomToolBar: LinearLayout{
         img_title_right.setOnClickListener(listener)
     }
 
+    fun setOnClickTvRightListener (listener: OnClickListener) {
+        tv_title_right.setOnClickListener(listener)
+    }
+
     fun setTitle(title: String) {
         tv_title.text = title
     }
 
     fun setTitle(title: Int) {
         tv_title.text = context.resources.getString(title)
+    }
+
+    fun setTitleRight(title: String) {
+        tv_title_right.text = title
+    }
+
+    fun setTitleRightColor(@ColorInt color: Int) {
+        tv_title_right.setTextColor(color)
     }
 
     fun setLeftIcon(@DrawableRes resId: Int) {
@@ -77,6 +95,9 @@ class CustomToolBar: LinearLayout{
         super.setBackgroundColor(color)
         toolbar.setBackgroundColor(color)
     }
+    fun setBackgroundTvRight(background :Drawable){
+        tv_title_right.background = background
+    }
     /**
      * 左侧按钮点击事件接口
      */
@@ -91,5 +112,11 @@ class CustomToolBar: LinearLayout{
         fun onClickRight(view: View)
     }
 
+    /**
+     * 右侧按钮点击事件接口
+     */
+    interface OnClickTvRightListener {
+        fun onClickTvRight(view: View)
+    }
 
 }

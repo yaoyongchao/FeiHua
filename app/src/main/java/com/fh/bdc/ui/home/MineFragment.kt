@@ -33,7 +33,7 @@ class MineFragment : BaseFragment() {
         }
 
         rootView.fv_voice_answer.setOnClickListener {
-
+            JumpUtil.jumpActivity(RouteUrl.myvoice)
         }
 
         rootView.fv_my_video.setOnClickListener {
